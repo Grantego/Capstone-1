@@ -1,0 +1,42 @@
+{% extends 'teams/header.html' %}
+{% block team_details %}
+  <div class="col-sm-9">
+    <div class="row">
+
+      {% for player in special %}
+
+        <div class="col-lg-4 col-md-5 col-8">
+          <div class="card user-card">
+            <div class="card-inner">
+              <div class="card-contents">
+                <a href="/players/{{ player.id }}" class="card-link">
+                  <img src="{{ player.image_url }}" alt="Image for {{ player.name }}" class="card-image">
+                  <p>{{ player.name }}</p>
+                </a>
+                {% if g.user %}
+                <form method="POST" action="/users/toggle-favorite-player/{{ player.id }}" class="player-fav" id="{{player.id}}">
+                  <button class="
+                    btn 
+                    btn-sm 
+                    {% if player in g.user.favorite_players %}
+                    {{'btn-danger'}}
+                    {% else %}
+                    {{'btn-secondary'}}
+                    {% endif %}" id ="btn{{player.id}}">
+                    <i class="fa fa-heart"></i> 
+                  </button>
+                </form>
+                {% endif %}
+
+              </div>
+              <p class="card-bio">Position: {{player.position}}</p>
+              <p class="card-bio">Number: {{player.number}}</p>
+            </div>
+          </div>
+        </div>
+
+      {% endfor %}
+
+    </div>
+  </div>
+{% endblock %}

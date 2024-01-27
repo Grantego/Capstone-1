@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<img src="{{ player.image_url }}" alt="Image for {{ player.name }}" id="profile-avatar">
+<div class="row full-width">
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-9">
+        <ul class="user-stats nav nav-pills">
+          <div class="ml-auto">
+            {% if g.user %}
+            <form method="POST" action="/users/toggle-favorite-player/{{ player.id }}" id="{{player.id}}" class="player-fav">
+              <button class="
+                btn 
+                btn-sm 
+                {% if team in g.user.favorite_players %}
+                {{'btn-danger'}}
+                {% else %}
+                {{'btn-secondary'}}
+                {% endif %}" id ="btn{{player.id}}">
+                <i class="fa fa-heart"></i> 
+              </button>
+            </form>
+            {% endif %}
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <h4 id="sidebar-username">{{ player.name }}</h4>
+    <p>Age: {{ player.age }}</p>
+    <p>Height: {{ player.height }}</p>
+    <p>Weight: {{ player.weight }}</p>
+    <p>College: {{ player.college }}</p>
+    <p>____________________________</p>
+    <p>Group: {{player.group}}</p>
+    <p>Position: {{player.position}}</p>
+    <p>Number: {{player.number}}</p>
+    <p>____________________________</p>
+    <p>Salary: {{player.salary}}</p>
+    <p>Seasons: {{player.seasons}}</p>
+  </div>
+
+  {% block player_details %}
+  {% endblock %}
+
+</div>
+
+{% endblock %}

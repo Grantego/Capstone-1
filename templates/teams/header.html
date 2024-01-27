@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<img src="{{ team.logo }}" alt="Image for {{ team.name }}" id="profile-avatar">
+<div class="row full-width">
+  <div class="container">
+    <div class="row justify-content-end">
+      <div class="col-9">
+        <ul class="user-stats nav nav-pills">
+          <li class="stat">
+            <a href="/teams/{{team.id}}"><p class="small">All Players</p></a>
+          </li>
+          <li class="stat">
+            <a href="/teams/{{team.id}}/offense"><p class="small">Offense</p></a>
+          </li>
+          <li class="stat">
+            <a href="/teams/{{team.id}}/defense"><p class="small">Defense</p></a>
+          </li>
+          <li class="stat">
+            <a href="/teams/{{team.id}}/special-teams"><p class="small">Special Teams</p></a>
+          </li>
+          <div class="ml-auto">
+            {% if g.user %}
+            <form method="POST" action="/users/toggle-favorite-team/{{ team.id }}" id="{{team.id}}" class="team-fav">
+              <button class="
+                btn 
+                btn-sm 
+                {% if team in g.user.favorite_teams %}
+                {{'btn-danger'}}
+                {% else %}
+                {{'btn-secondary'}}
+                {% endif %}" id ="btn{{team.id}}">
+                <i class="fa fa-heart"></i> 
+              </button>
+            </form>
+            {% endif %}
+          </div>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-3">
+    <h4 id="sidebar-username">{{ team.name }}</h4>
+    <p>City: {{ team.city }}</p>
+    <p>Coach: {{ team.coach }}</p>
+    <p>Stadium: {{ team.stadium }}</p>
+    <p>Established: {{ team.established }}</p>
+  </div>
+
+  {% block team_details %}
+  {% endblock %}
+
+</div>
+
+{% endblock %}

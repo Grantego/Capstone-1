@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-6 col-md-8 col-sm-12">
+    <ul class="list-group" id="teams-list">
+      {% for team in teams %}
+        <li class="list-group-item">
+          <a href="/teams/{{ team.id }}">
+            <img src="{{ team.logo }}" alt="" class="timeline-image">
+          </a>
+          <div class="message-area">
+            <a href="/teams/{{ team.id }}">{{ team.name }}</a>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
