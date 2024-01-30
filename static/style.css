@@ -298,7 +298,7 @@ nav + .container {
     display: none;
   }
 }
-/* ==================== User cards on follower/following pages */
+/* ==================== User cards on team and user pages pages */
 
 .user-card {
   width: 100%;
@@ -432,64 +432,4 @@ p.card-bio {
 
 .edit-btn-area > .btn {
   width: 48%;
-}
-
-/* =========================== Message Show page */
-
-.bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #62676c;
-}
-
-#messages.no-hover .message-area {
-  width: 100%;
-}
-
-#messages.no-hover .message-heading {
-  display: flex;
-  justify-content: space-between;
-  height: 47px;
-  margin-top: 3px;
-}
-
-#messages.no-hover .message-heading .btn {
-  min-width: 105px;
-}
-
-.messages-like {
-  position: absolute;
-  top: 4px;
-  right: 4px;
-  z-index: 1;
-}
-
-.single-message {
-  font-size: 27px;
-  line-height: 32px;
-  letter-spacing: 0.01em;
-  margin-bottom: 10px;
-}
-
-/* ================================ 404 page */
-
-.message-404 {
-  color: white;
-  margin-top: 2em;
-  text-align: center;
-}
-
-.message-404 a {
-  color: white;
-}
-
-.message-404 > h4.display-4 {
-  font-size: 2.5em;
-}
-
-.message-404 .form-inline input {
-  flex: 1;
 }
