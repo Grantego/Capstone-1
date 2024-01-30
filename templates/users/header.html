@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
-
+  {% block search %}
+  <li>
+    <form class="navbar-form navbar-right" action="/users">
+      <input name="q" class="form-control" placeholder="Search Users" id="search">
+      <button class="btn btn-default">
+        <span class="fa fa-search"></span>
+      </button>
+    </form>
+  </li>
+  {% endblock %}
 {% block content %}
 
 <img src="{{ user.image_url }}" alt="Image for {{ user.username }}" id="profile-avatar">
@@ -16,7 +25,7 @@
           </li>
           <div class="ml-auto">
             {% if g.user.id == user.id %}
-            <a href="/users/profile" class="btn btn-outline-secondary">Edit Profile</a>
+            <a href="/users/profile" class="btn btn-outline-secondary" id="edit-profile">Edit Profile</a>
             <form method="POST" action="/users/delete" class="form-inline">
               <button class="btn btn-outline-danger ml-2">Delete Profile</button>
             </form>

@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
-
+  {% block search %}
+  <li>
+    <form class="navbar-form navbar-right" action="/players">
+      <input name="q" class="form-control" placeholder="Search Players" id="search">
+      <button class="btn btn-default">
+        <span class="fa fa-search"></span>
+      </button>
+    </form>
+  </li>
+  {% endblock %}
 {% block content %}
 
 <img src="{{ team.logo }}" alt="Image for {{ team.name }}" id="profile-avatar">

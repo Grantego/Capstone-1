@@ -239,8 +239,9 @@ nav + .container {
   text-align: center;
   height: 60px;
   box-sizing: border-box;
-  padding: 14px 15px 7px;
+  padding: 20px 15px 7px;
   line-height: 1;
+  text-align: center;
 }
 
 .stat > .small {
@@ -249,12 +250,22 @@ nav + .container {
   font-size: 12px;
   letter-spacing: 0.02em;
   margin-bottom: 0;
+
 }
 
 .stat > .small + h4 {
   font-size: 18px;
   font-weight: bold;
   padding-top: 3px;
+}
+
+.team-fav {
+  margin-left: 10px;
+}
+
+#edit-profile{
+  margin-left: 10px;
+  margin-right: 20px;
 }
 
 #messages {

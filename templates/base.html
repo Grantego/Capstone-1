@@ -27,21 +27,8 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       {% if request.endpoint != None %}
-      <li>
-        <form class="navbar-form navbar-right" action="/users">
-          <input name="q" class="form-control" placeholder="Search Users" id="search">
-          <button class="btn btn-default">
-            <span class="fa fa-search"></span>
-          </button>
-        </form>
-      </li>
-        <form class="navbar-form navbar-right" action="/players">
-          <input name="q" class="form-control" placeholder="Search Players" id="search">
-          <button class="btn btn-default">
-            <span class="fa fa-search"></span>
-          </button>
-        </form>
-      </li>
+        {% block search %}
+        {% endblock %}
       {% endif %}
       {% if not g.user %}
       <li><a href="/signup">Sign up</a></li><span> | </span>

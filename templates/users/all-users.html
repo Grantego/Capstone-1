@@ -1,4 +1,14 @@
 {% extends 'base.html' %}
+{% block search %}
+<li>
+  <form class="navbar-form navbar-right" action="/users">
+    <input name="q" class="form-control" placeholder="Search Users" id="search">
+    <button class="btn btn-default">
+      <span class="fa fa-search"></span>
+    </button>
+  </form>
+</li>
+  {% endblock %}
 {% block content %}
 
 <div class="row justify-content-end">
