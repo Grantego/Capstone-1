@@ -1,5 +1,4 @@
-# Capstone-1
-
+# NFL Player Data
 ## API: [api-sports.io](https://v1.american-football.api-sports.io/)
 
 ### This app utilizes the above API to populate a database with information about all players in the NFL, and also provides statistics.  Users can make their own account and save their favorite teams and players.
