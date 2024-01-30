@@ -2,7 +2,18 @@
 {% block player_details %}
 <div class="col-sm-9">
     <div class="row">
-        <p>Stats coming soon!</p>
+        <h1><b>Player Statistics</b></h1>
+        <br>
+        {% if stat_groups%}
+          {% for group in stat_groups %}
+          <h2>{{group.name}}</h2>
+            {% for stat in group.statistics %}
+            <p>{{stat.name|capitalize}}: {{stat.value}}</p>
+            {% endfor %}
+          {% endfor%}
+        {% else %}
+          <h2>No stats found</h2>
+        {% endif %}
     </div>
   </div>
 {% endblock %}

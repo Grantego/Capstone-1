@@ -20,6 +20,16 @@ body.error-404 {
   cursor: pointer;
 }
 
+a {
+  color: #66757f;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #1c94e0;
+}
+
 /* ======================= Nav */
 
 .navbar {
@@ -163,6 +173,7 @@ nav + .container {
   border-radius: 100%;
   display: block;
   margin-left: -15px;
+  background-color: #e6ecf0;
 }
 
 #profile-image {
@@ -193,14 +204,6 @@ nav + .container {
 
 .message-area {
   margin-left: 10px;
-}
-
-#warbler-hero {
-  height: 360px;
-  margin-top: -16px;
-  opacity: 0.7;
-  background-size: cover;
-  background-position: top center;
 }
 
 .full-width {
@@ -295,11 +298,6 @@ nav + .container {
     display: none;
   }
 }
-
-.user-location {
-  color: #657786;
-}
-
 /* ==================== User cards on follower/following pages */
 
 .user-card {
@@ -381,51 +379,6 @@ nav + .container {
 p.card-bio {
   margin: 2em 10px 0;
 }
-
-/* ============================ Signed out home */
-
-.home-hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  left: 0;
-  z-index: -1;
-  background-image: url("/static/images/signed-out-home.jpg");
-  background-size: cover;
-  background-position: center center;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-  text-shadow: 0 0 8px #66757f;
-}
-
-.home-hero .btn {
-  text-shadow: none;
-  position: relative;
-  z-index: 1;
-  width: 150px;
-}
-
-.home-hero h1 {
-  margin-bottom: 4rem;
-}
-
-.home-hero:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/* ============================== Signed in Home */
 
 #home-aside > .user-card {
   margin-top: 0;

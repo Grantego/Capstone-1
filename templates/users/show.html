@@ -14,7 +14,7 @@
                     <a href="/teams/{{ team.id }}">{{ team.name }}</a>
                   </div>
                 {% if g.user %}
-                <form method="POST" action="/users/toggle-favorite-team/{{ team.id }}" class="player-fav" id="{{team.id}}">
+                <form method="POST" action="/users/toggle-favorite-team/{{ team.id }}" class="team-fav" id="{{team.id}}">
                   <button class="
                     btn 
                     btn-sm 
@@ -22,7 +22,7 @@
                     {{'btn-danger'}}
                     {% else %}
                     {{'btn-secondary'}}
-                    {% endif %}" id ="btn{{team.id}}">
+                    {% endif %}" id ="team-btn{{team.id}}">
                     <i class="fa fa-heart"></i> 
                   </button>
                 </form>

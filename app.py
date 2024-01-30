@@ -13,6 +13,7 @@ from models import db, connect_db, User, Team, Player
 
 API_BASE_URL = 'https://v1.american-football.api-sports.io'
 CURR_USER_KEY = "curr_user"
+YEAR = 2023
 
 app = Flask(__name__)
 
@@ -249,4 +250,13 @@ def list_players():
 @app.route('/players/<int:id>')
 def show_player_profile(id):
     player = Player.query.get_or_404(id)
-    return render_template('players/stats.html', player=player)
+    headers = {'x-apisports-key': API_KEY}
+    params = {'id': player.lookup_id, 'season': YEAR}
+
+    res = requests.get(f'{API_BASE_URL}/players/statistics', headers=headers, params=params)
+    res = res.json()
+    if len(res['response']) == 0:
+        stat_groups = None
+    else:
+        stat_groups = res['response'][0]['teams'][0]['groups']
+    return render_template('players/stats.html', player=player, stat_groups=stat_groups)
