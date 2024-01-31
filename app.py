@@ -249,6 +249,7 @@ def list_players():
 
 @app.route('/players/<int:id>')
 def show_player_profile(id):
+    """Show player profile with stats"""
     player = Player.query.get_or_404(id)
     headers = {'x-apisports-key': API_KEY}
     params = {'id': player.lookup_id, 'season': YEAR}
